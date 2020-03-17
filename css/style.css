@@ -50,5 +50,67 @@ header a {
 header [class^="col"] {
 	position: relative;
 	z-index: 1;
-	border: 1px solid red;;
+}
+@media (max-width: 991px) {
+	header:after {
+		right: -100px;
+	}
+	header a {
+		font-size: 18px;
+	}
+	.top-phone img,
+	.top-mail img {
+		height: 40px;
+	}
+}
+
+main {
+	overflow: hidden;
+	position: relative;
+}
+.main-text-wrap {
+	background-color: #d9af32;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	right: 55%;
+	transform: skewX(15deg);
+}
+.main-text {
+	transform: skewX(-15deg);
+	padding: 120px 80px 0 0;
+	max-width: 550px;
+	position: relative;
+	right: -76%;
+}
+.main-text h1 {
+	text-transform: uppercase;
+	font-size: 46px;
+}
+.main-text h1 span {
+	font-size: 36px;
+}
+.main-text ul {
+	list-style: none;
+	margin: 70px 0 0 40px;
+}
+.main-text li {
+	position: relative;
+	font-size: 28px;
+	line-height: 44px;
+}
+.main-text li:before {
+	position: absolute;
+	content: '✓';
+	left: -30px;
+}
+.top-slider {
+	max-width: 1150px;
+	float: right;
+}
+@media (max-width: 1600px) {
+	.main-text {
+		left: 35%;
+	}
 }
