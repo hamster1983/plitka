@@ -9,3 +9,46 @@
 body {
 	font-family: Roboto, sans-serif;
 }
+@media (min-width: 1600px) {
+	.container,
+	.container-xl	{
+		max-width: 1170px;
+	}
+}
+header {
+	background-color: #656a73;
+	padding: 25px 0 10px;
+	overflow: hidden;
+	position: relative;
+}
+header:before {
+	content: '';
+	display: block;
+	background-color: white;
+	width: 100%;
+	height: 15px;
+	position: absolute;
+	left: 0;
+	top: 0 !important;
+}
+header:after {
+	content: '';
+	display: block;
+	width: 43%;
+	height: 85%;
+	background-color: #d9af32;
+	position: absolute;
+	transform: skewX(25deg);
+	right: -300px;
+	top: 0;
+}
+header a {
+	color: white !important;
+	text-decoration: none !important;
+	font-size: 26px;
+}
+header [class^="col"] {
+	position: relative;
+	z-index: 1;
+	border: 1px solid red;;
+}
