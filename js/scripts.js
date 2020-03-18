@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	$('[name="phone"]').inputmask("+7(999) 999-9999");
 	
-	$('[type="submit"]').click(function(e) {
+	/*$('[type="submit"]').click(function(e) {
 		let form = $(this).parents('form');
 		if(form.find('[name="phone"]').val() == '' || form.find('[name="name"]').val() == '') {
 			alert('Поля ИМЯ и ТЕЛЕФОН не могут быть пустыми! Заявка НЕ отправлена! Попробуйте еще раз');
@@ -21,7 +21,7 @@ $(document).ready(function(){
 			//$('form [type="text"]').val('');
 		  }
 		});
-	});
+	});*/
 	
 	$('.top-slider').slick({
 	  infinite: true,
@@ -35,36 +35,23 @@ $(document).ready(function(){
 	  slidesToScroll: 1
 	});
 	
-	$('.bottom-slider').slick({
+	$('.part-slider').slick({
 	  infinite: true,
 	  autoplay: true,
-	  autoplaySpeed: 1500,
-	  arrows: false,
+	  arrows: true,
 	  dots: false,
 	  speed: 1500,
-	  slidesToShow: 5,
+	  slidesToShow: 3,
 	  slidesToScroll: 1,
 	  responsive: [
 		{
 		  breakpoint: 1199,
 		  settings: {
-			slidesToShow: 4,
-		  }
-		},
-		{
-		  breakpoint: 991,
-		  settings: {
-			slidesToShow: 3,
-		  }
-		},
-		{
-		  breakpoint: 767,
-		  settings: {
 			slidesToShow: 2,
 		  }
 		},
 		{
-		  breakpoint: 630,
+		  breakpoint: 991,
 		  settings: {
 			slidesToShow: 1,
 		  }

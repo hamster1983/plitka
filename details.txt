@@ -19,3 +19,7 @@ container 1170px
 &#187
 
 &#10003;
+
+about pic
+height: 290
+width: 580 480 380 280
