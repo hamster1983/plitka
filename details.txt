@@ -23,3 +23,6 @@ container 1170px
 about pic
 height: 290
 width: 580 480 380 280
+
+faq - 320 на 395
+#f8f9fa

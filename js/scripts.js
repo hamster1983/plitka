@@ -1,6 +1,10 @@
 $(document).ready(function(){
 	
 	$('[name="phone"]').inputmask("+7(999) 999-9999");
+
+	$('.faq-thumb').click(function(){
+	    $(this).toggleClass('active');
+	});
 	
 	/*$('[type="submit"]').click(function(e) {
 		let form = $(this).parents('form');
