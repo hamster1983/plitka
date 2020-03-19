@@ -74,8 +74,7 @@ $(document).ready(function(){
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
 	  asNavFor: '.comments-slider-for',
-	  dots: false,
-	  arrows: true
+	  arrows: false
 	});
 	
 	$('.comments-prev').click(function() {
