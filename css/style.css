@@ -20,6 +20,7 @@ h2 {
 	text-align: center;
 	border: none;
 	transition: .3s;
+	outline: none !important;
 }
 .btn-yellow:hover {
 	background-color: #656a73;
@@ -78,26 +79,27 @@ header [class^="col"] {
 		height: 40px;
 	}
 }
+@media (max-width: 767px) {
+	header {
+		padding-top: 15px;
+	}
+	header:before {
+		display: none;
+	}
+}
 
 main {
-	overflow: hidden;
 	position: relative;
-}
-.main-text-wrap {
 	background-color: #d9af32;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	z-index: 1;
-	right: 55%;
-	transform: skewX(15deg);
+	overflow: hidden;
 }
 .main-text {
-	transform: skewX(-15deg);
-	padding: 120px 80px 0 0;
-	max-width: 550px;
+	padding: 120px 15px;
+	background-color: #d9af32;
 	position: relative;
-	right: -76%;
+	z-index: 1;
+	max-width: 600px;
+	clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
 }
 .main-text h1 {
 	text-transform: uppercase;
@@ -121,12 +123,40 @@ main {
 	left: -30px;
 }
 .top-slider {
-	max-width: 1150px;
-	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 1150px;
 }
-@media (max-width: 1600px) {
+.top-slider img {
+	width: 100%;
+	height: 608px; /* IE bug */
+}
+@media (max-width: 767px) {
 	.main-text {
-		left: 35%;
+		padding: 40px 15px;
+	}
+	.top-slider img {
+		height: auto;
+	}
+}
+@media (max-width: 575px) {
+	.main-text h1 {
+		font-size: 30px;
+	}
+	.main-text h1 span {
+		font-size: 19px;
+	}
+	.main-text ul {
+		margin: 25px 0 0;
+	}
+	.main-text li {
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.main-text li:before {
+		left: -20px;
 	}
 }
 
@@ -273,10 +303,132 @@ main {
 	margin: 0 auto;
 }
 
+.comments {
+	position: relative;
+	background-color: #d9af32;
+	overflow: hidden;
+}
+.comments .container-xl {
+	position: relative;
+}
+.comments h2 {
+	position: absolute;
+	top: 50px;
+	left: 15px;
+	z-index: 2;
+}
+.comments-slider-nav {
+	padding: 100px 120px 100px 15px;
+	position: relative;
+	z-index: 1;
+	background-color: #d9af32;
+	max-width: 720px;
+	clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+}
+.comments-slider-nav-item:focus {
+	outline: none;
+}
+.comments-counter {
+	position: absolute;
+	bottom: 40px;
+	left: 90px;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+}
+.comments-prev,
+.comments-next {
+	width: 15px;
+	height: 15px;
+	transform: rotate(45deg);
+	cursor: pointer;
+}
+.comments-prev {
+	border-bottom: 3px solid black;
+	border-left: 3px solid black;
+	margin-right: 5px;
+}
+.comments-next {
+	border-top: 3px solid white;
+	border-right: 3px solid white;
+	margin-left: 5px;
+}
+.comments-num-slide .current,
+.comments-num-slide .slide-slash {
+	font-size: 32px;
+}
+.comments-num-slide .current {
+	font-weight: bold;
+}
+.comment-person {
+	margin: 60px 0;
+}
+.comment-person p {
+	text-transform: uppercase;
+	font-size: 20px;
+	margin: 0 0 0 30px;
+}
+.comment-person span {
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.comment-person img {
+	border-radius: 50%;
+	align-self: flex-end;
+}
+.comment-text img {
+	align-self: flex-start;
+	margin-right: 20px;
+}
+.comment-text p {
+	font-size: 26px;
+	line-height: 28px;
+	text-align: justify;
+}
+.comments-slider-for {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 1000px;
+}
+.comments-slider-for img {
+	width: 100%;
+	height: 608px; /* IE bug */
+}
+@media (max-width: 767px) {
+	.comments h2 {
+		left: 10px;
+		right: 10px;
+		margin: auto;
+	}
+	.comments-slider-for {
+		position: static;
+	}
+	.comments-slider-for img {
+		height: auto;
+	}
+	.comments-slider-nav {
+		clip-path: none;
+	}
+	.comments-slider-nav {
+		padding: 80px 20px 100px;
+	}
+}
+@media (max-width: 575px) {
+	.comment-text p {
+		font-size: 20px;
+		line-height: 22px;
+		text-align: left;
+	}
+}
+
 .about {
 	background: url('../img/fon_2.jpg') no-repeat;
 	background-position: 50% 100%;
 	background-size: 100%;
+	overflow: hidden;
 }
 .about .container {
 	position: relative;
@@ -286,9 +438,6 @@ main {
 	position: absolute;
 	left: 0;
 	z-index: 1;
-}
-.about-text h2 {
-	margin-bottom: 45px;
 }
 .about-text p {
 	font-size: 24px;
@@ -338,6 +487,34 @@ main {
 	width: 355px;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
 	background-image: url('../img/about_3.jpg');
+}
+@media (max-width: 1199px) {
+	.about-text {
+		padding-top: 15px;
+	}
+	.about-p-1 {
+		max-width: 420px;
+	}
+	.about-p-2 {
+		max-width: 700px;
+	}
+	.about-text ul {
+		max-width: 550px;
+		margin: 20px 0 30px;
+	}
+}
+@media (max-width: 991px) {
+	.about-text {
+		position: static;
+	}
+	.about-p-1,
+	.about-p-2,
+	.about-text ul	{
+		max-width: 100%;
+	}
+	.about-pic {
+		background-position: 25px 50%;
+	}
 }
 
 .preimuschestva {
@@ -558,6 +735,9 @@ main {
 }
 .faq-thumb.active:after {
 	transform: rotate(45deg);
+}
+.faq-answer {
+	transition: .5s;
 }
 .faq-answer p {
 	padding-top: 20px;

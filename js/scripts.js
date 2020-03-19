@@ -63,4 +63,29 @@ $(document).ready(function(){
 	  ] 
 	});
 	
+	 $('.comments-slider-for').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: false,
+	  fade: true,
+	  asNavFor: '.comments-slider-nav'
+	});
+	$('.comments-slider-nav').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  asNavFor: '.comments-slider-for',
+	  dots: false,
+	  arrows: true
+	});
+	
+	$('.comments-prev').click(function() {
+		$('.comments-slider-nav').slick('slickPrev');
+	});
+	$('.comments-next').click(function() {
+		$('.comments-slider-nav').slick('slickNext');
+	});
+	$('.comments-slider-nav').on('afterChange', function(event, slick, currentSlide, nextSlide) {
+		$('.comments-num-slide .current').text(currentSlide+1);
+	});
+	
 });
